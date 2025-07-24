@@ -1,0 +1,177 @@
+.container {
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+.header {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.1) 0%, rgba(11, 17, 49, 0.9) 100%);
+}
+
+.headerContent h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.headerContent p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cases {
+  padding: 80px 20px;
+}
+
+.casesContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.caseCard {
+  background: rgba(90, 81, 141, 0.1);
+  border: 1px solid rgba(90, 81, 141, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.2);
+}
+
+.caseCard:hover {
+  box-shadow: 0 12px 35px rgba(90, 81, 141, 0.3);
+  transform: translateY(-2px);
+}
+
+.casePreview {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  gap: 24px;
+}
+
+.caseIcon {
+  font-size: 3rem;
+  min-width: 80px;
+  text-align: center;
+  background: rgba(90, 81, 141, 0.2);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(90, 81, 141, 0.4);
+}
+
+.caseContent {
+  flex: 1;
+}
+
+.caseContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #e0e9eb;
+}
+
+.caseContent p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.learnMoreBtn {
+  background-color: #5a518d;
+  color: #e0e9eb;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.learnMoreBtn:hover {
+  background-color: #6b5fa3;
+  box-shadow: 0 4px 15px rgba(90, 81, 141, 0.4);
+}
+
+.expandedContent {
+  border-top: 1px solid rgba(90, 81, 141, 0.3);
+  padding: 30px;
+  background: rgba(90, 81, 141, 0.05);
+  animation: slideDown 0.3s ease-out;
+}
+
+.fullDescription {
+  margin-bottom: 30px;
+}
+
+.fullDescription h4,
+.workflow h4 {
+  color: #5a518d;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.workflow ul {
+  list-style: none;
+  padding: 0;
+}
+
+.workflow li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.workflow li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #5a518d;
+  font-weight: bold;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 16px;
+  }
+  
+  .headerContent h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cases {
+    padding: 60px 16px;
+  }
+  
+  .casePreview {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .caseIcon {
+    margin-bottom: 16px;
+  }
+  
+  .expandedContent {
+    padding: 24px;
+  }
+}
