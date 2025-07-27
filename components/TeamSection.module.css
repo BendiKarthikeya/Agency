@@ -1,0 +1,197 @@
+.teamSection {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.05) 0%, rgba(11, 17, 49, 0.1) 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: #e0e9eb;
+  margin-bottom: 16px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #e0e9eb;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.teamCard {
+  background: rgba(224, 233, 235, 0.05);
+  border: 1px solid rgba(90, 81, 141, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.teamCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5a518d, #6b5fa3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teamCard:hover {
+  background: rgba(224, 233, 235, 0.08);
+  border-color: rgba(90, 81, 141, 0.4);
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.15);
+  transform: translateY(-4px);
+}
+
+.teamCard:hover::before {
+  opacity: 1;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(90, 81, 141, 0.1);
+}
+
+.roleIcon {
+  font-size: 2.5rem;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(90, 81, 141, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(90, 81, 141, 0.2);
+}
+
+.roleTitle {
+  font-size: 1.4rem;
+  color: #e0e9eb;
+  margin: 0;
+  font-weight: 600;
+}
+
+.responsibilities h4 {
+  font-size: 1rem;
+  color: #5a518d;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.responsibilityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilityItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e0e9eb;
+  opacity: 0.9;
+}
+
+.responsibilityItem:last-child {
+  margin-bottom: 0;
+}
+
+.checkmark {
+  color: #5a518d;
+  font-weight: bold;
+  margin-right: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .teamSection {
+    padding: 60px 16px;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+  }
+  
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .teamCard {
+    padding: 24px;
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .roleIcon {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  
+  .roleTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamSection {
+    padding: 40px 12px;
+  }
+  
+  .teamCard {
+    padding: 20px;
+  }
+  
+  .roleIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+  
+  .roleTitle {
+    font-size: 1.2rem;
+  }
+  
+  .responsibilityItem {
+    font-size: 0.9rem;
+  }
+}

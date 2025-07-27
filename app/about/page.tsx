@@ -1,6 +1,22 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import styles from './page.module.css'
+import TeamSection from '../../components/TeamSection'
+import ContactModal from '../../components/ContactModal'
 
 export default function About() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const router = useRouter()
+
+  const handleScheduleConsultation = () => {
+    setIsContactModalOpen(true)
+  }
+
+  const handleViewCaseStudies = () => {
+    router.push('/use-cases')
+  }
   return (
     <div className={styles.container}>
       <section className={styles.header}>
@@ -74,7 +90,13 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
+      <TeamSection />
+
+      <section className={styles.content}>
+        <div className={styles.contentContainer}>
           <div className={styles.section}>
             <div className={`card ${styles.contactCard}`}>
               <h2>Ready to Get Started?</h2>
@@ -84,13 +106,29 @@ export default function About() {
                 automate smarter and scale faster.
               </p>
               <div className={styles.contactButtons}>
-                <button className={styles.primaryBtn}>Schedule Consultation</button>
-                <button className={styles.secondaryBtn}>View Case Studies</button>
+                <button 
+                  className={styles.primaryBtn}
+                  onClick={handleScheduleConsultation}
+                >
+                  Schedule Consultation
+                </button>
+                <button 
+                  className={styles.secondaryBtn}
+                  onClick={handleViewCaseStudies}
+                >
+                  View Case Studies
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Schedule Consultation"
+      />
     </div>
   )
 }

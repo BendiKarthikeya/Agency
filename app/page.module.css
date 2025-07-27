@@ -2,6 +2,7 @@
   min-height: 100vh;
 }
 
+/* Original Hero Section - Keep as is */
 .hero {
   display: flex;
   align-items: center;
@@ -38,34 +39,6 @@
   opacity: 0.9;
 }
 
-.ctaButton {
-  font-size: 1.2rem;
-  padding: 16px 32px;
-  margin-top: 20px;
-}
-
-.features {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, rgba(90, 81, 141, 0.05) 0%, rgba(11, 17, 49, 0.8) 100%);
-}
-
-.featuresContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.featuresContainer h2 {
-  margin-bottom: 60px;
-  font-size: 2.5rem;
-}
-
-.featureGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
 @keyframes glow {
   from {
     text-shadow: 0 0 20px rgba(90, 81, 141, 0.5);
@@ -75,6 +48,242 @@
   }
 }
 
+/* Focus Section - New content */
+.focusSection {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.05) 0%, rgba(11, 17, 49, 0.8) 100%);
+}
+
+.focusTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #e0e9eb;
+}
+
+.benefitsList {
+  margin-bottom: 50px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e0e9eb;
+  opacity: 0.95;
+}
+
+.checkmark {
+  color: #5a518d;
+  font-weight: bold;
+  margin-right: 16px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  font-size: 1.3rem;
+}
+
+.ctaButton {
+  background-color: #5a518d;
+  color: #e0e9eb;
+  border: none;
+  padding: 18px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(90, 81, 141, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton:hover {
+  background-color: #6b5fa3;
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.6);
+  transform: translateY(-3px);
+}
+
+.ctaButtonSecondary {
+  background-color: transparent;
+  color: #5a518d;
+  border: 2px solid #5a518d;
+  padding: 16px 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ctaButtonSecondary:hover {
+  background-color: #5a518d;
+  color: #e0e9eb;
+  box-shadow: 0 6px 20px rgba(90, 81, 141, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Section Containers */
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #e0e9eb;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* Problems Section */
+.problems {
+  padding: 100px 0;
+  background: rgba(90, 81, 141, 0.03);
+}
+
+.problemGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.problemCard {
+  background: rgba(224, 233, 235, 0.05);
+  border: 1px solid rgba(90, 81, 141, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.problemCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #ee5a52);
+  border-radius: 12px 12px 0 0;
+}
+
+.problemCard:hover {
+  background: rgba(224, 233, 235, 0.08);
+  border-color: rgba(90, 81, 141, 0.4);
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.15);
+  transform: translateY(-4px);
+}
+
+.problemCard h3 {
+  font-size: 1.3rem;
+  color: #e0e9eb;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.problemCard p {
+  color: #e0e9eb;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Solutions Section */
+.solutions {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.08) 0%, rgba(11, 17, 49, 0.1) 100%);
+}
+
+.solutionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.solutionCard {
+  background: rgba(224, 233, 235, 0.05);
+  border: 1px solid rgba(90, 81, 141, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.solutionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5a518d, #6b5fa3);
+  border-radius: 12px 12px 0 0;
+}
+
+.solutionCard:hover {
+  background: rgba(224, 233, 235, 0.08);
+  border-color: rgba(90, 81, 141, 0.4);
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.15);
+  transform: translateY(-4px);
+}
+
+.solutionIcon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.solutionCard h3 {
+  font-size: 1.3rem;
+  color: #e0e9eb;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.solutionCard p {
+  color: #e0e9eb;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* How We Help Section */
+.howWeHelp {
+  padding: 100px 0;
+  background: rgba(90, 81, 141, 0.05);
+  text-align: center;
+}
+
+.helpContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.helpDescription {
+  font-size: 1.3rem;
+  color: #e0e9eb;
+  opacity: 0.95;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.helpDescription:last-of-type {
+  margin-bottom: 50px;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .headline {
     font-size: 2.5rem;
@@ -89,12 +298,79 @@
     padding: 20px;
   }
   
-  .features {
-    padding: 60px 16px;
+  .focusSection {
+    padding: 80px 0;
   }
   
-  .featureGrid {
+  .focusTitle {
+    font-size: 2.2rem;
+  }
+  
+  .benefit {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+  
+  .sectionContainer {
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .problems,
+  .solutions,
+  .howWeHelp {
+    padding: 80px 0;
+  }
+  
+  .problemGrid,
+  .solutionGrid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  
+  .problemCard,
+  .solutionCard {
+    padding: 24px;
+  }
+  
+  .helpDescription {
+    font-size: 1.2rem;
+  }
+  
+  .ctaButton,
+  .ctaButtonSecondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 2rem;
+  }
+  
+  .hero {
+    padding: 30px 12px;
+  }
+  
+  .benefit {
+    font-size: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .problemCard,
+  .solutionCard {
+    padding: 20px;
+  }
+  
+  .helpDescription {
+    font-size: 1.1rem;
   }
 }

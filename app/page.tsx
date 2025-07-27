@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import styles from './page.module.css'
+import ContactModal from '../components/ContactModal'
 
 export default function Home() {
   const [currentWord, setCurrentWord] = useState(0)
   const words = ['EMIT', 'COLL', 'CRM DATA', 'Business']
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const [modalTitle, setModalTitle] = useState('Get Started Today')
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,8 +18,14 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [words.length])
 
+  const openContactModal = (title: string) => {
+    setModalTitle(title)
+    setIsContactModalOpen(true)
+  }
+
   return (
     <div className={styles.container}>
+      {/* Original Hero Section - Keep as is */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.headline}>
@@ -28,31 +37,126 @@ export default function Home() {
             <br />
             <span className={styles.tagline}>Automate smarter, scale faster</span>
           </h1>
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton}
+            onClick={() => openContactModal('Get Started Today')}
+          >
             Get Started Today
           </button>
         </div>
       </section>
 
-      <section className={styles.features}>
-        <div className={styles.featuresContainer}>
-          <h2>Why Choose Automation?</h2>
-          <div className={styles.featureGrid}>
-            <div className="card">
-              <h3>Save Time</h3>
-              <p>Eliminate repetitive tasks and focus on what matters most to your business growth.</p>
+      {/* New Content Section - Imagine if you could finally focus on growth */}
+      <section className={styles.focusSection}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.focusTitle}>
+            Imagine if you could finally focus on growth…
+          </h2>
+          <div className={styles.benefitsList}>
+            <div className={styles.benefit}>
+              <span className={styles.checkmark}>✓</span>
+              You don't reply to WhatsApp or Instagram DMs all day — they're handled automatically.
             </div>
-            <div className="card">
-              <h3>Reduce Errors</h3>
-              <p>Automated processes minimize human error and ensure consistent, reliable results.</p>
+            <div className={styles.benefit}>
+              <span className={styles.checkmark}>✓</span>
+              You don't follow up with abandoned carts — your system brings them back for you.
             </div>
-            <div className="card">
-              <h3>Scale Efficiently</h3>
-              <p>Handle increased workload without proportional increases in manual effort or costs.</p>
+            <div className={styles.benefit}>
+              <span className={styles.checkmark}>✓</span>
+              You don't miss out on leads or sales — because every customer gets a quick, personal response.
+            </div>
+            <div className={styles.benefit}>
+              <span className={styles.checkmark}>✓</span>
+              You don't hire extra VAs or manage 10 tools — everything runs smoothly in one place.
+            </div>
+            <div className={styles.benefit}>
+              <span className={styles.checkmark}>✓</span>
+              You focus on growth — not day-to-day chaos.
             </div>
           </div>
         </div>
       </section>
+
+      {/* Problems Section */}
+      <section className={styles.problems}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>What's Really Holding You Back?</h2>
+          <div className={styles.problemGrid}>
+            <div className={styles.problemCard}>
+              <h3>Repetitive Work</h3>
+              <p>Answering "Where is my order?", updating inventory, copy-pasting messages, manually tracking returns.</p>
+            </div>
+            <div className={styles.problemCard}>
+              <h3>Spending Big on Ads</h3>
+              <p>You're running Instagram ads, but missing leads in DMs. Carts get abandoned. No follow-ups.</p>
+            </div>
+            <div className={styles.problemCard}>
+              <h3>Too Many Tasks</h3>
+              <p>You're stuck doing everything—from order updates to customer replies—leaving zero space to grow your brand.</p>
+            </div>
+            <div className={styles.problemCard}>
+              <h3>Scattered Tools</h3>
+              <p>You're running Instagram ads, but missing leads in DMs. Carts get abandoned. No follow-ups.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Section */}
+      <section className={styles.solutions}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>The Solution</h2>
+          <div className={styles.solutionGrid}>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionIcon}>🤖</div>
+              <h3>Automate Repetitive Tasks</h3>
+              <p>Let AI handle order tracking, inventory updates, returns, FAQs, and follow-ups.</p>
+            </div>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionIcon}>⚡</div>
+              <h3>Replace Manual Workflows</h3>
+              <p>Auto-send reports, sync data across platforms, and manage CRM, all in one flow.</p>
+            </div>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionIcon}>📈</div>
+              <h3>Focus on Scale Not Operation</h3>
+              <p>Skip daily firefighting. Focus on strategy, partnerships, and new product launches.</p>
+            </div>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionIcon}>💰</div>
+              <h3>Grow Without Hiring Costs</h3>
+              <p>Handle customer support, social posts, invoices, and more — without extra hires.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Help Section */}
+      <section className={styles.howWeHelp}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>How Can You Build Your Own AI Assistant? That's Where We Come In.</h2>
+          <div className={styles.helpContent}>
+            <p className={styles.helpDescription}>
+              At GoAutomate, we help founders build their own personalized AI agents — designed around your exact business needs, tasks, and workflows.
+            </p>
+            <p className={styles.helpDescription}>
+              We craft intelligent agents that take over your repetitive work — so you can focus on what truly matters: growth, strategy, and scale.
+            </p>
+            <button 
+              className={styles.ctaButtonSecondary}
+              onClick={() => openContactModal('Build Your AI Assistant')}
+            >
+              Build Your AI Assistant
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title={modalTitle}
+      />
     </div>
   )
 }
