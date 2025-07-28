@@ -55,27 +55,23 @@ export default function Home() {
           <div className={styles.benefitsList}>
             <div className={styles.benefit}>
               <span className={styles.checkmark}>✓</span>
-              You don't reply to WhatsApp or Instagram DMs all day — they're handled automatically.
+              You don't reply to WhatsApp or Instagram DMs all day they're handled automatically.
             </div>
             <div className={styles.benefit}>
               <span className={styles.checkmark}>✓</span>
-              You don't follow up with abandoned carts — your system brings them back for you.
+              You don't follow up with abandoned carts your system brings them back for you.
             </div>
             <div className={styles.benefit}>
               <span className={styles.checkmark}>✓</span>
-              You don't miss out on leads or sales — because every customer gets a quick, personal response.
+              You don't miss out on leads or sales because every customer gets a quick, personal response.
             </div>
             <div className={styles.benefit}>
               <span className={styles.checkmark}>✓</span>
-              You don't hire extra VAs or manage 10 tools — everything runs smoothly in one place.
+              You don't hire extra VAs or manage 10 tools everything runs smoothly in one place.
             </div>
             <div className={styles.benefit}>
               <span className={styles.checkmark}>✓</span>
-              You focus on growth — not day-to-day chaos.
-            </div>
-            <div className={styles.benefit}>
-              <span className={styles.checkmark}>✓</span>
-              You don't waste hours compiling reports — insights are delivered to you automatically in real time.
+              You don't waste hours compiling reports insights are delivered to you automatically in real time.
             </div>
           </div>
         </div>
