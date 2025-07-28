@@ -63,6 +63,14 @@ export default function About() {
                   <h3>📈 Proven Results</h3>
                   <p>Track record of delivering 40-80% efficiency improvements</p>
                 </div>
+                <div className={styles.valueProp}>
+                  <h3>🤖 Scalable AI Agents</h3>
+                  <p>Easily expand automation as your business grows without added headcount.</p>
+                </div>
+                <div className={styles.valueProp}>
+                  <h3>🔒 Data Security First</h3>
+                  <p>Enterprise-grade protection to keep your operations and customer data safe.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -72,11 +80,11 @@ export default function About() {
               <h2>Our Services</h2>
               <div className={styles.services}>
                 <div className={styles.service}>
-                  <h3>Email Marketing Automation (EMIT)</h3>
+                  <h3>Email Marketing Automation (EMAIL)</h3>
                   <p>Intelligent email sequences that nurture leads and drive conversions</p>
                 </div>
                 <div className={styles.service}>
-                  <h3>Data Collection Systems (COLL)</h3>
+                  <h3>Data Collection Systems (CALL)</h3>
                   <p>Automated data gathering, processing, and analysis from multiple sources</p>
                 </div>
                 <div className={styles.service}>
@@ -86,6 +94,14 @@ export default function About() {
                 <div className={styles.service}>
                   <h3>Custom Business Automation</h3>
                   <p>Bespoke solutions for your unique business processes and requirements</p>
+                </div>
+                <div className={styles.service}>
+                  <h3>🔄 Workflow Orchestration</h3>
+                  <p>Connect and automate apps like Shopify, HubSpot, and Google Sheets with powerful workflows</p>
+                </div>
+                <div className={styles.service}>
+                  <h3>📊 Real-Time Reporting & Alerts</h3>
+                  <p>Autogenerate reports and get instant alerts for key business events and KPIs</p>
                 </div>
               </div>
             </div>

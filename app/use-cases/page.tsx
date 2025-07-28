@@ -18,7 +18,7 @@ const useCases: UseCase[] = [
     title: "Email Marketing Automation",
     description: "Streamline your email campaigns with automated sequences, personalization, and performance tracking.",
     icon: "📧",
-    fullDescription: "Transform your email marketing with intelligent automation that nurtures leads, segments audiences, and delivers personalized content at scale. Our EMIT system handles everything from welcome sequences to re-engagement campaigns.",
+    fullDescription: "Transform your email marketing with intelligent automation that nurtures leads, segments audiences, and delivers personalized content at scale. Our EMAIL system handles everything from welcome sequences to re-engagement campaigns.",
     workflow: [
       "Lead capture and segmentation",
       "Automated welcome sequence",
@@ -31,7 +31,7 @@ const useCases: UseCase[] = [
     title: "Data Collection & Processing",
     description: "Automate data gathering from multiple sources, clean, and organize information for actionable insights.",
     icon: "📊",
-    fullDescription: "Our COLL system automatically gathers data from various sources, processes it through intelligent filters, and delivers clean, organized datasets ready for analysis and decision-making.",
+    fullDescription: "Our CALL system automatically gathers data from various sources, processes it through intelligent filters, and delivers clean, organized datasets ready for analysis and decision-making.",
     workflow: [
       "Multi-source data extraction",
       "Data validation and cleaning",

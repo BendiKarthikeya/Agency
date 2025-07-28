@@ -51,7 +51,19 @@
 /* Focus Section - New content */
 .focusSection {
   padding: 100px 0;
-  background: linear-gradient(135deg, rgba(90, 81, 141, 0.05) 0%, rgba(11, 17, 49, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.08) 0%, rgba(107, 95, 163, 0.05) 50%, rgba(11, 17, 49, 0.1) 100%);
+  position: relative;
+}
+
+.focusSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(90, 81, 141, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .focusTitle {
@@ -87,48 +99,95 @@
   margin-top: 4px;
   flex-shrink: 0;
   font-size: 1.3rem;
+  text-shadow: 0 0 10px rgba(90, 81, 141, 0.5);
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px rgba(90, 81, 141, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(90, 81, 141, 0.8), 0 0 20px rgba(90, 81, 141, 0.4);
+  }
 }
 
 .ctaButton {
-  background-color: #5a518d;
+  background: linear-gradient(135deg, #5a518d 0%, #6b5fa3 50%, #8b7bb8 100%);
   color: #e0e9eb;
   border: none;
   padding: 18px 36px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(90, 81, 141, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.4), 0 0 20px rgba(90, 81, 141, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .ctaButton:hover {
-  background-color: #6b5fa3;
-  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.6);
-  transform: translateY(-3px);
+  background: linear-gradient(135deg, #6b5fa3 0%, #8b7bb8 50%, #a89cc8 100%);
+  box-shadow: 0 12px 35px rgba(90, 81, 141, 0.6), 0 0 30px rgba(90, 81, 141, 0.3);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.ctaButton:hover::before {
+  left: 100%;
 }
 
 .ctaButtonSecondary {
-  background-color: transparent;
+  background: linear-gradient(135deg, transparent 0%, rgba(90, 81, 141, 0.1) 100%);
   color: #5a518d;
-  border: 2px solid #5a518d;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #5a518d, #6b5fa3, #8b7bb8) 1;
   padding: 16px 34px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButtonSecondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #5a518d 0%, #6b5fa3 50%, #8b7bb8 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 .ctaButtonSecondary:hover {
-  background-color: #5a518d;
   color: #e0e9eb;
-  box-shadow: 0 6px 20px rgba(90, 81, 141, 0.4);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.4), 0 0 20px rgba(90, 81, 141, 0.2);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.ctaButtonSecondary:hover::before {
+  opacity: 1;
 }
 
 /* Section Containers */
@@ -149,22 +208,39 @@
 /* Problems Section */
 .problems {
   padding: 100px 0;
-  background: rgba(90, 81, 141, 0.03);
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(238, 90, 82, 0.03) 50%, rgba(90, 81, 141, 0.05) 100%);
+  position: relative;
+}
+
+.problems::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(238, 90, 82, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .problemGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .problemCard {
-  background: rgba(224, 233, 235, 0.05);
-  border: 1px solid rgba(90, 81, 141, 0.2);
-  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(224, 233, 235, 0.08) 0%, rgba(255, 107, 107, 0.05) 100%);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 16px;
   padding: 30px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .problemCard::before {
@@ -174,15 +250,32 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #ff6b6b, #ee5a52);
-  border-radius: 12px 12px 0 0;
+  background: linear-gradient(90deg, #ff6b6b, #ee5a52, #ff8a80);
+  border-radius: 16px 16px 0 0;
+}
+
+.problemCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .problemCard:hover {
-  background: rgba(224, 233, 235, 0.08);
-  border-color: rgba(90, 81, 141, 0.4);
-  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.15);
-  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(224, 233, 235, 0.12) 0%, rgba(255, 107, 107, 0.08) 100%);
+  border-color: rgba(255, 107, 107, 0.5);
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.2), 0 0 20px rgba(255, 107, 107, 0.1);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.problemCard:hover::after {
+  opacity: 1;
 }
 
 .problemCard h3 {
@@ -202,23 +295,40 @@
 /* Solutions Section */
 .solutions {
   padding: 100px 0;
-  background: linear-gradient(135deg, rgba(90, 81, 141, 0.08) 0%, rgba(11, 17, 49, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.1) 0%, rgba(107, 95, 163, 0.08) 50%, rgba(11, 17, 49, 0.1) 100%);
+  position: relative;
+}
+
+.solutions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(90, 81, 141, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 30% 70%, rgba(107, 95, 163, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .solutionGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .solutionCard {
-  background: rgba(224, 233, 235, 0.05);
-  border: 1px solid rgba(90, 81, 141, 0.2);
-  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(224, 233, 235, 0.08) 0%, rgba(90, 81, 141, 0.1) 100%);
+  border: 1px solid rgba(90, 81, 141, 0.3);
+  border-radius: 16px;
   padding: 30px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .solutionCard::before {
@@ -228,21 +338,45 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #5a518d, #6b5fa3);
-  border-radius: 12px 12px 0 0;
+  background: linear-gradient(90deg, #5a518d, #6b5fa3, #8b7bb8);
+  border-radius: 16px 16px 0 0;
+}
+
+.solutionCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(90, 81, 141, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .solutionCard:hover {
-  background: rgba(224, 233, 235, 0.08);
-  border-color: rgba(90, 81, 141, 0.4);
-  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.15);
-  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(224, 233, 235, 0.12) 0%, rgba(90, 81, 141, 0.15) 100%);
+  border-color: rgba(90, 81, 141, 0.5);
+  box-shadow: 0 12px 40px rgba(90, 81, 141, 0.25), 0 0 20px rgba(90, 81, 141, 0.15);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.solutionCard:hover::after {
+  opacity: 1;
 }
 
 .solutionIcon {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 20px;
   display: block;
+  filter: drop-shadow(0 4px 8px rgba(90, 81, 141, 0.3));
+  transition: all 0.3s ease;
+}
+
+.solutionCard:hover .solutionIcon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 6px 12px rgba(90, 81, 141, 0.4));
 }
 
 .solutionCard h3 {

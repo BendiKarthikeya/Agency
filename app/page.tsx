@@ -6,7 +6,7 @@ import ContactModal from '../components/ContactModal'
 
 export default function Home() {
   const [currentWord, setCurrentWord] = useState(0)
-  const words = ['EMIT', 'COLL', 'CRM DATA', 'Business']
+  const words = ['EMAIL', 'CALL', 'CRM DATA', 'Business']
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
   const [modalTitle, setModalTitle] = useState('Get Started Today')
 
@@ -73,6 +73,10 @@ export default function Home() {
               <span className={styles.checkmark}>✓</span>
               You focus on growth — not day-to-day chaos.
             </div>
+            <div className={styles.benefit}>
+              <span className={styles.checkmark}>✓</span>
+              You don't waste hours compiling reports — insights are delivered to you automatically in real time.
+            </div>
           </div>
         </div>
       </section>
@@ -97,6 +101,14 @@ export default function Home() {
             <div className={styles.problemCard}>
               <h3>Scattered Tools</h3>
               <p>You're running Instagram ads, but missing leads in DMs. Carts get abandoned. No follow-ups.</p>
+            </div>
+            <div className={styles.problemCard}>
+              <h3>Too much time managing, not enough scaling.</h3>
+              <p>Founders get stuck in ops, support & marketing — leaving no space for real growth.</p>
+            </div>
+            <div className={styles.problemCard}>
+              <h3>Growing teams often means growing complexity.</h3>
+              <p>Founders burn time training, managing, and still repeating the same tasks daily.</p>
             </div>
           </div>
         </div>
@@ -126,6 +138,16 @@ export default function Home() {
               <div className={styles.solutionIcon}>💰</div>
               <h3>Grow Without Hiring Costs</h3>
               <p>Handle customer support, social posts, invoices, and more — without extra hires.</p>
+            </div>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionIcon}>🧠</div>
+              <h3>Smarter Decision-Making</h3>
+              <p>Use AI to monitor performance, surface insights, and make data-backed decisions faster.</p>
+            </div>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionIcon}>🔄</div>
+              <h3>Always-On Consistency</h3>
+              <p>AI runs 24/7 without breaks — ensuring replies, updates, and processes never miss a beat.</p>
             </div>
           </div>
         </div>

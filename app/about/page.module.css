@@ -23,11 +23,27 @@
 
 .content {
   padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(90, 81, 141, 0.03) 0%, rgba(107, 95, 163, 0.02) 50%, rgba(11, 17, 49, 0.05) 100%);
+  position: relative;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(90, 81, 141, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(107, 95, 163, 0.06) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .contentContainer {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .section {
@@ -42,59 +58,135 @@
 .valueProps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 20px;
   margin-top: 24px;
 }
 
 .valueProp {
-  padding: 20px;
-  background: rgba(90, 81, 141, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(90, 81, 141, 0.2);
+  padding: 16px;
+  background: linear-gradient(145deg, rgba(90, 81, 141, 0.08) 0%, rgba(107, 95, 163, 0.05) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(90, 81, 141, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.valueProp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5a518d, #6b5fa3, #8b7bb8);
+  border-radius: 12px 12px 0 0;
+}
+
+.valueProp::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(90, 81, 141, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.valueProp:hover {
+  background: linear-gradient(145deg, rgba(90, 81, 141, 0.12) 0%, rgba(107, 95, 163, 0.08) 100%);
+  border-color: rgba(90, 81, 141, 0.5);
+  box-shadow: 0 8px 25px rgba(90, 81, 141, 0.2), 0 0 15px rgba(90, 81, 141, 0.1);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.valueProp:hover::after {
+  opacity: 1;
 }
 
 .valueProp h3 {
   font-size: 1.1rem;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: #e0e9eb;
+  line-height: 1.3;
 }
 
 .valueProp p {
   font-size: 0.95rem;
   opacity: 0.9;
   margin-bottom: 0;
+  line-height: 1.4;
 }
 
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  gap: 20px;
   margin-top: 24px;
 }
 
 .service {
-  padding: 24px;
-  background: rgba(90, 81, 141, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(90, 81, 141, 0.2);
-  transition: all 0.3s ease;
+  padding: 18px;
+  background: linear-gradient(145deg, rgba(90, 81, 141, 0.08) 0%, rgba(107, 95, 163, 0.05) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(90, 81, 141, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5a518d, #6b5fa3, #8b7bb8);
+  border-radius: 12px 12px 0 0;
+}
+
+.service::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(90, 81, 141, 0.12) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .service:hover {
-  background: rgba(90, 81, 141, 0.1);
-  border-color: rgba(90, 81, 141, 0.4);
-  box-shadow: 0 4px 15px rgba(90, 81, 141, 0.2);
+  background: linear-gradient(145deg, rgba(90, 81, 141, 0.12) 0%, rgba(107, 95, 163, 0.08) 100%);
+  border-color: rgba(90, 81, 141, 0.5);
+  box-shadow: 0 10px 30px rgba(90, 81, 141, 0.25), 0 0 20px rgba(90, 81, 141, 0.15);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.service:hover::after {
+  opacity: 1;
 }
 
 .service h3 {
   color: #e0e9eb;
   font-size: 1.2rem;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  text-shadow: 0 0 10px rgba(90, 81, 141, 0.3);
 }
 
 .service p {
   margin-bottom: 0;
   opacity: 0.9;
+  line-height: 1.4;
 }
 
 .contactCard {
